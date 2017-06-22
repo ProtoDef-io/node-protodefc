@@ -1,7 +1,7 @@
 {
   "name": "protodefc",
   "version": "1.0.0",
-  "description": "node.js ProtoDef implementation using protodefc and protodefc-prebuilt",
+  "description": "ProtoDef implementation using protodefc and protodefc-prebuilt",
   "main": "index.js",
   "dependencies": {
     "protodefc-prebuilt": "^1.0.0",

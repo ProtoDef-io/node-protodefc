@@ -1,11 +1,9 @@
-const ProtoDef = require("protodefc").ProtoDef;
-const Serializer = require("protodefc").Serializer;
-const Parser = require("protodefc").Parser;
-const fs=require('fs');
+const ProtoDef = require('../').ProtoDef; // protodefc
+const Serializer = require('../').Serializer;
+const Parser = require('../').Parser;
+const fs = require('fs');
 
-
-const protocol = fs.readFileSync('simple_protocol.pds','utf8');
-
+const protocol = fs.readFileSync(__dirname + '/simple.pds', 'utf8');
 
 const proto = new ProtoDef();
 proto.addProtocol(protocol);
@@ -13,9 +11,9 @@ const parser = new Parser(proto, "position");
 const serializer = new Serializer(proto, "position");
 
 serializer.write({
-  "x":1,
-  "y":2,
-  "z":3
+  "x": 1,
+  "y": 2,
+  "z": 3
 });
 
 parser.on('error',function(err){

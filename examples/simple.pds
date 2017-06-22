@@ -6,4 +6,3 @@ def("position") => container {
     field("y") => ::i32;
     field("z") => ::i32;
 };
-
