@@ -1,0 +1,20 @@
+{
+  "name": "protodefc",
+  "version": "1.0.0",
+  "description": "node.js ProtoDef implementation using protodefc and protodefc-prebuilt",
+  "main": "index.js",
+  "dependencies": {
+    "protodefc-prebuilt": "^1.0.0",
+    "readable-stream": "^2.3.1"
+  },
+  "prepare": "require-self",
+  "devDependencies": {
+    "require-self": "^0.2.1"
+  },
+  "repository": "git@github.com:rom1504/node-protodefc.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Romain Beaumont <romain.rom1@gmail.com> (<romain.rom1@gmail.com>)",
+  "license": "MIT"
+}
