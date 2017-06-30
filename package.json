@@ -4,7 +4,7 @@
   "description": "ProtoDef implementation using protodefc and protodefc-prebuilt",
   "main": "index.js",
   "dependencies": {
-    "protodefc-prebuilt": "git+https://github.com/ProtoDef-io/protodefc-prebuilt.git",
+    "protodefc-prebuilt": "^1.1.0",
     "readable-stream": "^2.3.1"
   },
   "prepare": "require-self",
