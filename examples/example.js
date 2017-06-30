@@ -1,4 +1,4 @@
-const ProtoDef = require('../').ProtoDef; // protodefc
+const ProtoDef = require('../').ProtoDef;
 const Serializer = require('../').Serializer;
 const Parser = require('../').Parser;
 const fs = require('fs');
@@ -11,9 +11,9 @@ const parser = new Parser(proto, "position");
 const serializer = new Serializer(proto, "position");
 
 serializer.write({
-  "x": 1,
-  "y": 2,
-  "z": 3
+  x: 1,
+  y: 2,
+  z: 3
 });
 
 parser.on('error',function(err){
