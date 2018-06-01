@@ -1,20 +1,22 @@
 {
   "name": "protodefc",
-  "version": "1.0.0",
-  "description": "ProtoDef implementation using protodefc and protodefc-prebuilt",
+  "version": "0.1.0",
+  "description": "ProtoDef implementation using protodefc",
   "main": "index.js",
   "dependencies": {
-    "protodefc-prebuilt": "^1.1.0",
     "readable-stream": "^2.3.1"
   },
-  "prepare": "require-self",
-  "devDependencies": {
-    "require-self": "^0.2.1"
-  },
-  "repository": "git@github.com:rom1504/node-protodefc.git",
+  "repository": "git@github.com:ProtoDef-io/node-protodefc.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard *.js src/*.js src/**/*.js examples/*.js",
+    "bindgen": "wasm-bindgen native/target/wasm32-unknown-unknown/release/protodefc_glue.wasm --out-dir dist/ --nodejs --no-typescript",
+    "build": "cd native/ && cargo build --target wasm32-unknown-unknown --release && cd ../ && npm run bindgen"
   },
   "author": "Romain Beaumont <romain.rom1@gmail.com> (<romain.rom1@gmail.com>)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.1.0",
+    "standard": "^11.0.1"
+  }
 }

@@ -1,0 +1,11 @@
+[package]
+name = "protodefc_glue"
+version = "0.1.0"
+authors = ["mhsjlw <mhsjlw@users.noreply.github.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+protodefc = { git = "https://github.com/mhsjlw/protodefc.git", branch = "wasm" } # FIXME
