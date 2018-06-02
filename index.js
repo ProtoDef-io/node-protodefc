@@ -1,5 +1,5 @@
 module.exports = {
-  ProtoDef: require('./src/protodef'),
-  Serializer: require('./lib/serializer').Serializer,
-  Parser: require('./lib/serializer').Parser
+  ProtoDef: require('./src'),
+  Serializer: require('./src/serializer').Serializer,
+  Parser: require('./src/serializer').Parser
 }

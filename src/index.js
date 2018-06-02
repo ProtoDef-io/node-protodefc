@@ -1,25 +1,16 @@
 const Module = require('module')
 
-// const { compile } = require('./protodefc_bindgen')
-// const fs = require('fs');
-// console.log(compile(fs.readFileSync('./examples/simple.pds').toString()))
+const { compile } = require('../dist/protodefc_glue')
 
 class ProtoDef {
-  addProtocol (protocolData) {
-    console.log('FIXME')
-    // const types = require('./types')
-    // const compiled = ProtoDefc(protocolData) + 'exports'
-
-    // const m = new Module('', module.parent)
-    // m._compile(compiled, '')
-
-    // console.log('Exported')
-
-    // this.protocol = m.exports
+  addProtocol (data) {
+    const types = require('./types')
+    const compiled = compile(data) + 'exports'
+    this.protocol = eval(compiled)
   }
 
   read (buffer, cursor, type) {
-    const [value, size] = this.protocol[type].deserialize(buffer, cursor)
+    const {value, size} = this.protocol[type].deserialize(buffer, cursor)
     return {value, size}
   }
 
@@ -28,7 +19,7 @@ class ProtoDef {
   }
 
   sizeOf (value, type) {
-    return this.protocol[type].size_of(value)
+    return this.protocol[type].sizeOf(value)
   }
 
   createPacketBuffer (type, packet) {

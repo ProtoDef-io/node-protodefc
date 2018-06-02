@@ -1,4 +1,4 @@
-const Transform = require('readable-stream').Transform
+const { Transform } = require('readable-stream')
 
 class Serializer extends Transform {
   constructor (proto, mainType) {
@@ -56,7 +56,4 @@ class Parser extends Transform {
   }
 }
 
-module.exports = {
-  Serializer: Serializer,
-  Parser: Parser
-}
+module.exports = { Serializer, Parser }

@@ -6,12 +6,16 @@
   "dependencies": {
     "readable-stream": "^2.3.1"
   },
+  "engines": {
+    "node": ">=8.3"
+  },
   "repository": "git@github.com:ProtoDef-io/node-protodefc.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard *.js src/*.js src/**/*.js examples/*.js",
-    "bindgen": "wasm-bindgen native/target/wasm32-unknown-unknown/release/protodefc_glue.wasm --out-dir dist/ --nodejs --no-typescript",
-    "build": "cd native/ && cargo build --target wasm32-unknown-unknown --release && cd ../ && npm run bindgen"
+    "build": "cd native/ && cargo build --target wasm32-unknown-unknown --release && cd ../ && mkdir -p dist/ && wasm-bindgen native/target/wasm32-unknown-unknown/release/protodefc_glue.wasm --out-dir dist/ --nodejs --no-typescript",
+    "optimize": "wasm-opt -Os -o dist/protodefc_glue_bg.wasm dist/protodefc_glue_bg.wasm",
+    "prepublish": "npm run build && npm run optimize"
   },
   "author": "Romain Beaumont <romain.rom1@gmail.com> (<romain.rom1@gmail.com>)",
   "license": "MIT",

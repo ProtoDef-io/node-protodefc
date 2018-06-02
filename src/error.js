@@ -14,4 +14,4 @@ class PartialReadError extends ExtendableError {
   }
 }
 
-module.exports = {ExtendableError: ExtendableError, PartialReadError: PartialReadError}
+module.exports = { ExtendableError, PartialReadError }
