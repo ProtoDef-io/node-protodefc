@@ -11,7 +11,7 @@
   },
   "repository": "git@github.com:ProtoDef-io/node-protodefc.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "standard *.js src/*.js src/**/*.js examples/*.js",
     "build": "cd native/ && cargo build --target wasm32-unknown-unknown --release && cd ../ && mkdir -p dist/ && wasm-bindgen native/target/wasm32-unknown-unknown/release/protodefc_glue.wasm --out-dir dist/ --nodejs --no-typescript",
     "optimize": "wasm-opt -Os -o dist/protodefc_glue_bg.wasm dist/protodefc_glue_bg.wasm",
