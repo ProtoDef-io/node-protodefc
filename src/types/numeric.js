@@ -14,11 +14,11 @@ module.exports = {
   '::u8': {
     sizeOf: function (input) { return 1 },
     serialize: function (input, buffer, offset) {
-      buffer.writeInt8(input, offset)
+      buffer.writeUInt8(input, offset)
       return offset + 1
     },
     deserialize: function (buffer, offset) {
-      return { value: buffer.readInt8(offset), size: offset + 1 }
+      return { value: buffer.readUInt8(offset), size: offset + 1 }
     }
   },
   '::i16': {

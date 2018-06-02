@@ -3,10 +3,21 @@ const Module = require('module')
 const { compile } = require('../dist/protodefc_glue')
 
 class ProtoDef {
+  constructor() {
+    this.types = { }
+    this.protocol = { }
+
+    this.addType = this.addType.bind(this)
+  }
+
   addProtocol (data) {
-    const types = require('./types')
+    const types = { ...require('./types'), ...this.types }
     const compiled = compile(data) + 'exports'
     this.protocol = eval(compiled)
+  }
+
+  addType (name, definition) {
+    this.types[name] = definition
   }
 
   read (buffer, cursor, type) {
