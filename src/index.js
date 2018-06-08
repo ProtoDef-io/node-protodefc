@@ -1,7 +1,7 @@
 const { compile } = require('../dist/protodefc_glue')
 
 class ProtoDef {
-  constructor() {
+  constructor () {
     this.types = { }
     this.protocol = { }
 
@@ -9,9 +9,9 @@ class ProtoDef {
   }
 
   addProtocol (data) {
-    const types = { ...require('./types'), ...this.types }
+    const types = { ...require('./types'), ...this.types } // eslint-disable-line
     const compiled = compile(data) + 'exports'
-    this.protocol = eval(compiled)
+    this.protocol = eval(compiled) // eslint-disable-line
   }
 
   addType (name, definition) {

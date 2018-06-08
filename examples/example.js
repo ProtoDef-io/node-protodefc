@@ -25,8 +25,7 @@ serializer.write({
 })
 
 parser.on('error', (err) => {
-  if(err.buffer.length > 0)
-    console.log(err.stack)
+  if (err.buffer.length > 0) { console.log(err.stack) }
 })
 
 serializer.pipe(parser)
