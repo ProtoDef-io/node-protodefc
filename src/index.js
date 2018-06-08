@@ -1,5 +1,3 @@
-const Module = require('module')
-
 const { compile } = require('../dist/protodefc_glue')
 
 class ProtoDef {

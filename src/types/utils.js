@@ -1,6 +1,4 @@
-// - pstring
-// - buffer
-// - cstring
+// TODO(mhsjlw): pstring, buffer, cstring
 
 const assert = require('assert')
 

@@ -1,13 +1,15 @@
 const { ProtoDef, Serializer, Parser } = require('../')
 
-const protocol = `def_native("i32");
+const protocol = `
+def_native("i32");
 
 @export "position"
 def("position") => container {
     field("x") => ::i32;
     field("y") => ::i32;
     field("z") => ::i32;
-};`
+};
+`
 
 describe('', () => {
   let proto, parser, serializer

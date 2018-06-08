@@ -15,7 +15,7 @@
     "lint": "standard *.js src/*.js src/**/*.js examples/*.js",
     "build": "cd native/ && cargo build --target wasm32-unknown-unknown --release && cd ../ && mkdir -p dist/ && wasm-bindgen native/target/wasm32-unknown-unknown/release/protodefc_glue.wasm --out-dir dist/ --nodejs --no-typescript",
     "optimize": "wasm-opt -Os -o dist/protodefc_glue_bg.wasm dist/protodefc_glue_bg.wasm",
-    "prepublish": "npm run build && npm run optimize"
+    "prepublish": "npm run build"
   },
   "author": "Romain Beaumont <romain.rom1@gmail.com> (<romain.rom1@gmail.com>)",
   "license": "MIT",
