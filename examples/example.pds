@@ -1,0 +1,26 @@
+@type integer("u8")
+def_native("u8");
+
+@type integer("u32")
+def_native("u32");
+
+def_native("f32");
+
+namespace("example") {
+    def("position") => container {
+        field("x") => ::f32;
+        field("y") => ::f32;
+        field("z") => ::f32;
+    };
+
+    @export "::example::entity_data"
+    def("entity_data") => container {
+        field("entity_id") => ::u32;
+        field("position") => ::example::position;
+        virtual_field("entity_type_tag", value: "entity_type/@tag") => ::u8;
+        field("entity_type") => union("entity_type", tag: "../entity_type_tag") {
+            variant("player", match: "0") => container {};
+            variant("zombie", match: "1") => container {};
+        };
+    };
+};

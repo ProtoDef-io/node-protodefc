@@ -1,0 +1,17 @@
+[package]
+name = "protodefc_glue"
+version = "0.1.0"
+authors = ["mhsjlw <mhsjlw@users.noreply.github.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+protodefc = { git = "https://github.com/ProtoDef-io/protodefc.git", rev = "a17214e3c27f5438241b8ef3a82bfffd955e6dd6" }
+
+# Optimize for size
+[profile.release]
+debug = false
+lto = true
+opt-level = 's'

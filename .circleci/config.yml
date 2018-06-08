@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/node-protodefc
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
+      - run: rustup target add wasm32-unknown-unknown
+      - run: cargo install wasm-bindgen
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npm i
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run: npm run lint
+      - run: npm test
