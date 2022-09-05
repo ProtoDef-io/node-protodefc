@@ -6,7 +6,7 @@ A [ProtoDef](https://github.com/ProtoDef-io/ProtoDef) implementation wrapping [p
 
 # Installation
 
-For release applications, install as NPM module:
+For release applications, install as an npm module:
 
 ```sh
 $ npm i --save protodefc
