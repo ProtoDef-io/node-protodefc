@@ -6,7 +6,7 @@ A [ProtoDef](https://github.com/ProtoDef-io/ProtoDef) implementation wrapping [p
 
 # Installation
 
-For release applications, install using the `npm` module:
+For release applications, install as an npm module:
 
 ```sh
 $ npm i --save protodefc
@@ -17,9 +17,9 @@ Otherwise (e.g.: for development):
 ```sh
 $ git clone https://github.com/ProtoDef-io/node-protodefc.git
 $ cd node-protodefc
-$ rustup update nightly # https://rustup.rs/
+$ rustup update nightly
 $ rustup default nightly
 $ rustup target add wasm32-unknown-unknown
-$ cargo install wasm-bindgen
+$ cargo install wasm-bindgen-cli
 $ npm i
 ```
